@@ -26,15 +26,3 @@ class Report(models.Model):
     text = models.TextField()
     createdby = models.ForeignKey(User,on_delete=models.CASCADE)
     department = models.ForeignKey(Department,on_delete=models.PROTECT)
-
-
-
-
-
-
-
-
-
-
-
-
