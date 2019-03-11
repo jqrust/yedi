@@ -1,0 +1,21 @@
+html, body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: red;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    
+}
+.container {
+    margin-top: 100px;
+    height: 100%;
+    align-content: center;
+    
+}
+.card {
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+} 

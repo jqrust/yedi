@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+    <h1>Current Reports</h1>
+    {% if report_list %}
+    <ul class="list-group">
+        {% for report in report_list %}
+        <li class="list-group-item"><a href="{% url 'yirmi:detail' report.id %}">{{ report.header }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No reports are available.</p>
+    {% endif %}
+    <a class="btn btn-success btn-lg" href="{% url 'yirmi:create'%}">Create New</a>
+</div>
+{% endblock %}
