@@ -9,6 +9,8 @@ class User(AbstractUser):
 class Department(models.Model):
     name = models.CharField(max_length=128)
     user = models.ForeignKey(User,on_delete=models.PROTECT)
+    def __str__(self):
+        return self.name
 class Report(models.Model):
     state_list = (
         ('C' , 'Created'),

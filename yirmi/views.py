@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout, get_user
 
 from .forms import UserForm, ReportForm  
-from .models import User, Report
+from .models import User, Report, Department
 from django.views import generic 
 # Create your views here.
 class ReportView(generic.ListView):
@@ -27,9 +27,9 @@ class DetailView(generic.DetailView):
         return render(request, self.template_name, context)
 class CreateView(generic.CreateView):
     model = Report
-    template_name = 'yirmi/create.html'
+    template_name = 'yirmi/create.html'    
     fields = ['header',
-            'text',   'department',]
+            'text',   'department',]    
     def post(self, request, *args, **kwargs):
         form =  ReportForm(request.POST)
         if form.is_valid():            
@@ -39,6 +39,8 @@ class CreateView(generic.CreateView):
             obj = Report(header=header,text=text,createdby=get_user(self.request),department =department)
             obj.save()
             return redirect("../")
+        #d = Department.objects.all()
+        #context = {'department_obj':d}
         return render(request, self.template_name, {})
 def home_view(request):
     return render(request,"yirmi/home.html",{})

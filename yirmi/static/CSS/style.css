@@ -3,7 +3,7 @@ html, body {
     background-repeat: no-repeat;
     height: 100%;
     font-family: 'Numans', sans-serif;
-   
+ 
 }
 .container {
     
@@ -23,6 +23,11 @@ html, body {
     
     margin-top: 25px;    
 }
+.form_group {
+    background-color: red;
+    margin: auto;
+    align-content: center;
+}
 .input-group {
     margin-top: 50px
 }
@@ -37,7 +42,9 @@ input:focus {
     outline: 0 0 0 0 !important;
     box-shadow: 0 0 0 0 !important;
 }
-
+.textarea {
+    height: 1000px;
+}
 .remember {
     color: white;
 }

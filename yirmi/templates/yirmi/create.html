@@ -1,11 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <form method="post">
-        {% csrf_token %}
-        {{  form.as_p }}
-        <input type="submit" value="Save">
-    </form>
+    <div class="jumbotron">
+        <form method="post">
+            <div class="form-group">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="header" name="header" required>
+                </div>
+                <div class="input-group">
+                    <textarea type="text text-lg" class="form-control col-12" placeholder="text" name="text" required></textarea>
+                </div>
+                <div class="input-group">         
+                    {{ form.department }}
+                </div>
+                <input class="btn btn-success float-right" type="submit" value="Save">
+            </div>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
