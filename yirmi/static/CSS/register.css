@@ -1,9 +1,15 @@
 .container {
-    background-color: darkkhaki;
+    background-color: rgba(164, 207, 216, 0.52);
     margin: auto;
+    height: 100%;
 }
-.form-group-special {
-    margin-top: 10px;
+h1{
+    margin-top: 100px;
+}
+.forms-together {
+    margin-top: 50px;
+}
+.form-group-special {    
     align-content: center;     
 }
 .input-group {

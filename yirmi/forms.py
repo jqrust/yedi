@@ -10,9 +10,9 @@ class UserForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Zorunlu. Lütfen geçerli bir e-mail adresi veriniz.',)
     username.widget.attrs.update({'class':'form-group-special col-10 float-right'})
     username.widget.label_classes = ('col-2', 'float-left' )
-    first_name.widget.attrs.update({'class':'form-group-special'})
-    last_name.widget.attrs.update({'class':'form-group-special'})
-    email.widget.attrs.update({'class':'form-group-special'})
+    first_name.widget.attrs.update({'class':'form-group-special col-10 float-right'})
+    last_name.widget.attrs.update({'class':'form-group-special col-10 float-right'})
+    email.widget.attrs.update({'class':'form-group-special col-10 float-right'})
     class Meta:
         model = User
         fields = [
