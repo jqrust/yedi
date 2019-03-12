@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
@@ -6,14 +6,15 @@
 {% load staticfiles %}
 <html>
 <head>
-    {% block css %}
+    {% block def_css %}
     <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
     {% endblock %}
-
+    {% block css %}
+    {% endblock %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   
-    <title> Sistem Prog</title>
+
+    <title> 7/24 Servisi </title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

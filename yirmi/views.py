@@ -31,8 +31,7 @@ class DetailView(generic.DetailView):
 class CreateView(generic.CreateView):
     model = Report
     template_name = 'yirmi/create.html'
-    fields = ['header',
-            'text',   'department',]
+    fields = ['header', 'text',   'department',]
     def post(self, request, *args, **kwargs):
         form =  ReportForm(request.POST)
         if form.is_valid():

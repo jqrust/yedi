@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
+{% bootstrap_css %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'CSS/register.css' %}">
+{% endblock css %}
 {% block content %}
-<div class="jumbotron">
-    <form method="POST" action="">
+<div class="container">
+    <h1>Register</h1>
+    <form method="POST" class="form-horizontal">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" name="" value="Register">
+        <input type="submit" name="" value="Kayıt ol">
     </form>
 </div>
 
