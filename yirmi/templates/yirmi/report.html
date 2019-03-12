@@ -2,6 +2,10 @@
 {% load bootstrap4 %}
 {% block content %}
 <div class="container">
+    {% if User.is_anonymous %}
+    <h1>To Create a Report You Must Login.</h1>
+    <a class="btn btn-success btn-lg" href="{% url 'yirmi:login' %}">Login</a>
+    {% else %}
     <h1>Current Reports</h1>
     {% if report_list %}
     <ul class="list-group">
@@ -12,6 +16,7 @@
     {% else %}
     <p>No reports are available.</p>
     {% endif %}
-    <a class="btn btn-success btn-lg" href="{% url 'yirmi:create'%}">Create New</a>
+    <a class="btn btn-success btn-lg" href="{% url 'yirmi:create' %}">Create New</a>
+    {% endif %}
 </div>
 {% endblock %}

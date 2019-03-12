@@ -12,9 +12,16 @@ from django.views import generic
 class ReportView(generic.ListView):
     template_name = 'yirmi/report.html'
     context_object_name = 'report_list'
-    def get_queryset(self):
-        obj = Report.objects.filter(createdby=get_user(self.request))
-        return obj
+    def get_queryset(self):      
+        curr_user = get_user(self.request)        
+        dep = Department.objects.filter(user=curr_user)
+        if(curr_user.is_anonymous):
+            return
+        elif(dep): 
+            return Report.objects.filter(department__in=dep)
+        else:
+            return Report.objects.filter(createdby=curr_user)
+        
 
 class DetailView(generic.DetailView):
     model = Report
